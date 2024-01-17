@@ -2,8 +2,10 @@ package jsonizer
 
 import (
 	"encoding/json"
+	"encoding/xml"
 	"errors"
 	"gopkg.in/yaml.v3"
+	
 )
 
 // JSON is a utility struct for JSON operations.
