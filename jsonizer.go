@@ -3,6 +3,7 @@ package jsonizer
 import (
 	"encoding/json"
 	"errors"
+	"gopkg.in/yaml.v3"
 )
 
 // JSON is a utility struct for JSON operations.
@@ -51,5 +52,40 @@ func (j *JSON) ArrayGet(index int) (*JSON, error) {
 		}
 	}
 	return nil, errors.New("index out of range or not an array")
+}
 
+// ToXML converts JSON data to XML string.
+func (j *JSON) ToXML() (string, error) {
+	xmlData, err := xml.Marshal(j.data)
+	if err != nil {
+		return "", err
+	}
+	return string(xmlData), nil
+}
+
+// FromXML creates a new JSON instance from an XML string.
+func FromXML(xmlStr string) (*JSON, error) {
+	var data interface{}
+	if err := xml.Unmarshal([]byte(xmlStr), &data); err != nil {
+		return nil, err
+	}
+	return &JSON{data: data}, nil
+}
+
+// ToYAML converts JSON data to YAML string.
+func (j *JSON) ToYAML() (string, error) {
+	yamlData, err := yaml.Marshal(j.data)
+	if err != nil {
+		return "", err
+	}
+	return string(yamlData), nil
+}
+
+// FromYAML creates a new JSON instance from a YAML string.
+func FromYAML(yamlStr string) (*JSON, error) {
+	var data interface{}
+	if err := yaml.Unmarshal([]byte(yamlStr), &data); err != nil {
+		return nil, err
+	}
+	return &JSON{data: data}, nil
 }
