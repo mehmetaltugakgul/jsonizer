@@ -15,21 +15,27 @@ To create a new JSON instance with your data, you can use the NewJSON function:
 
 ```
 import "github.com/mehmetaltugakgul/jsonizer"
+
 data := map[string]interface{}{
  "name": "John",
  "age": 30,
 }
+
 jsonData := jsonizer.NewJSON(data)
+
 ```
 # Parsing JSON
 To create a JSON instance from a JSON string, you can use the ParseJSON function:
 
 ```
 jsonStr := `{"name": "Alice", "age": 25}`
+
 parsedJSON, err := jsonizer.ParseJSON(jsonStr)
+
 if err != nil {
  // Handle the error
 }
+
 ```
 
 ## Accessing JSON values
@@ -37,9 +43,11 @@ You can retrieve values from the JSON data by key using the Get method:
 
 ```
 nameJSON, err := jsonData.Get("name")
+
 if err != nil {
  // Handle the error
 }
+
 fmt.Println(nameJSON.Stringify())
 ```
 
@@ -47,10 +55,13 @@ If your JSON data is an array, you can also retrieve values by index using the A
 
 ```
 arrayJSON := jsonizer.NewJSON([]interface{}{10, 20, 30})
+
 valueJSON, err := arrayJSON.ArrayGet(1)
+
 if err != nil {
  // Handle the error
 }
+
 fmt.Println(valueJSON.Stringify())
 ```
 
@@ -58,10 +69,13 @@ fmt.Println(valueJSON.Stringify())
 
 ```
 jsonData := &JSON{data: yourJSONObject}
+
 xmlStr, err := jsonData.ToXML()
+
 if err != nil {
     // Handle error
 }
+
 fmt.Println(xmlStr)
 ```
 
@@ -69,10 +83,13 @@ fmt.Println(xmlStr)
 
 ```
 xmlStr := "<root><key>value</key></root>"
+
 jsonData, err := FromXML(xmlStr)
+
 if err != nil {
     // Handle error
 }
+
 fmt.Println(jsonData)
 ```
 
@@ -80,20 +97,26 @@ fmt.Println(jsonData)
 
 ```
 jsonObj := &JSON{data: yourJSONObject}
+
 yamlStr, err := jsonObj.ToYAML()
+
 if err != nil {
     // Handle error
 }
+
 fmt.Println(yamlStr)
 ```
 ## Convert FromYAML
 
 ```
 yamlStr := "key: value"
+
 jsonData, err := FromYAML(yamlStr)
+
 if err != nil {
     // Handle error
 }
+
 fmt.Println(jsonData)
 ```
 
