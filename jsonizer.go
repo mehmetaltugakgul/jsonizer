@@ -56,32 +56,6 @@ func (j *JSON) ArrayGet(index int) (*JSON, error) {
 	return nil, errors.New("index out of range or not an array")
 }
 
-// ToXML converts JSON data to XML string.
-func (j *JSON) ToXML() (string, error) {
-	xmlData, err := xml.Marshal(j.data)
-	if err != nil {
-		return "", err
-	}
-	return string(xmlData), nil
-}
-
-// FromXML creates a new JSON instance from an XML string.
-func FromXML(xmlStr string) (*JSON, error) {
-	var data interface{}
-	if err := xml.Unmarshal([]byte(xmlStr), &data); err != nil {
-		return nil, err
-	}
-
-	// If the root element is a map with a single key, unwrap it
-	if rootMap, ok := data.(map[string]interface{}); ok && len(rootMap) == 1 {
-		for _, v := range rootMap {
-			data = v
-			break
-		}
-	}
-
-	return &JSON{data: data}, nil
-}
 
 // ToYAML converts JSON data to YAML string.
 func (j *JSON) ToYAML() (string, error) {
