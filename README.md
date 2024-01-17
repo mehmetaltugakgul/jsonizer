@@ -10,7 +10,7 @@ go get github.com/mehmetaltugakgul/jsonizer
 ```
 
 # Usage
-# Creating a JSON instance
+## Creating a JSON instance
 To create a new JSON instance with your data, you can use the NewJSON function:
 
 ```
@@ -21,7 +21,7 @@ data := map[string]interface{}{
 }
 jsonData := jsonizer.NewJSON(data)
 ```
-# Parsing JSON
+## Parsing JSON
 To create a JSON instance from a JSON string, you can use the ParseJSON function:
 
 ```
