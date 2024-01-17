@@ -1,8 +1,8 @@
 package jsonizer
 
 import (
-	"encoding/json"
 	"encoding/xml"
+	"encoding/json"
 	"errors"
 	"gopkg.in/yaml.v3"
 	
