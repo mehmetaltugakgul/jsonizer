@@ -71,6 +71,15 @@ func FromXML(xmlStr string) (*JSON, error) {
 	if err := xml.Unmarshal([]byte(xmlStr), &data); err != nil {
 		return nil, err
 	}
+
+	// If the root element is a map with a single key, unwrap it
+	if rootMap, ok := data.(map[string]interface{}); ok && len(rootMap) == 1 {
+		for _, v := range rootMap {
+			data = v
+			break
+		}
+	}
+
 	return &JSON{data: data}, nil
 }
 
