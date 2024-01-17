@@ -6,7 +6,7 @@ serialization and deserialization, as well as accessing JSON values by key or in
 To use this package, you need to import it into your Go project. You can install it using go get:
 
 ```bash
-go get github.com/your-username/jsonizer
+go get github.com/mehmetaltugakgul/jsonizer
 ```
 
 # Usage
@@ -14,7 +14,7 @@ go get github.com/your-username/jsonizer
 To create a new JSON instance with your data, you can use the NewJSON function:
 
 ```
-import "github.com/your-username/jsonizer"
+import "github.com/mehmetaltugakgul/jsonizer"
 data := map[string]interface{}{
  "name": "John",
  "age": 30,
