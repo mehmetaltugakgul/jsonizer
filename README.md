@@ -1,5 +1,5 @@
 ﻿# Package JSONizer
-The JSONizer Go package simplifies working with JSON data by providing essential utilities for serialization, deserialization, and data retrieval. Whether you need to create JSON instances, parse JSON from strings, or access JSON values by key or index, JSONizer offers an efficient and user-friendly solution. Additionally, it offers seamless conversion between JSON and other data formats, such as XML and YAML, making it a versatile tool for developers working with structured data in their Go projects. JSONizer streamlines the process of handling JSON, making it an invaluable addition to your Go toolkit.
+The JSONizer Go package simplifies working with JSON data by providing essential utilities for serialization, deserialization, and data retrieval. Whether you need to create JSON instances, parse JSON from strings, or access JSON values by key or index, JSONizer offers an efficient and user-friendly solution. Additionally, it offers seamless conversion between JSON and YAML, making it a versatile tool for developers working with structured data in their Go projects. JSONizer streamlines the process of handling JSON, making it an invaluable addition to your Go toolkit.
 
 # Installation
 To use this package, you need to import it into your Go project. You can install it using go get:
@@ -64,33 +64,6 @@ if err != nil {
 fmt.Println(valueJSON.Stringify())
 ```
 
-## Convert ToXML
-
-```
-jsonData := &JSON{data: yourJSONObject}
-
-xmlStr, err := jsonData.ToXML()
-
-if err != nil {
-    // Handle the error
-}
-
-fmt.Println(xmlStr)
-```
-
-## Convert FromXML
-
-```
-xmlStr := "<root><key>value</key></root>"
-
-jsonData, err := FromXML(xmlStr)
-
-if err != nil {
-    // Handle the error
-}
-
-fmt.Println(jsonData)
-```
 
 ## Convert ToYAML
 
