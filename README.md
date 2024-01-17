@@ -72,7 +72,7 @@ jsonData := &JSON{data: yourJSONObject}
 xmlStr, err := jsonData.ToXML()
 
 if err != nil {
-    // Handle error
+    // Handle the error
 }
 
 fmt.Println(xmlStr)
@@ -86,7 +86,7 @@ xmlStr := "<root><key>value</key></root>"
 jsonData, err := FromXML(xmlStr)
 
 if err != nil {
-    // Handle error
+    // Handle the error
 }
 
 fmt.Println(jsonData)
@@ -100,7 +100,7 @@ jsonObj := &JSON{data: yourJSONObject}
 yamlStr, err := jsonObj.ToYAML()
 
 if err != nil {
-    // Handle error
+    // Handle the error
 }
 
 fmt.Println(yamlStr)
@@ -113,7 +113,7 @@ yamlStr := "key: value"
 jsonData, err := FromYAML(yamlStr)
 
 if err != nil {
-    // Handle error
+    // Handle the error
 }
 
 fmt.Println(jsonData)
